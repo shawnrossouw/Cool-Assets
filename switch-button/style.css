@@ -1,0 +1,86 @@
+@use postcss-nested;
+@use postcss-preset-env;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: #ffe5e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #fe444f;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(254, 68, 79, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  &:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: 15px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: 15px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+  &:hover {
+    background: #49e98a;
+    box-shadow: 0 10px 25px rgba(73, 233, 138, 0.3);
+    &:before {
+      width: 0;
+      height: 40px;
+      border-radius: 8px;
+      border: 5px solid white;
+      transform: rotate(45deg);
+      background: white;
+    }
+    &:after {
+      width: 0;
+      height: 40px;
+      border-radius: 8px;
+      border: 5px solid white;
+      transform: rotate(-45deg);
+      background: white;
+    }
+  }
+  &:focus {
+    background: #49e98a;
+    box-shadow: 0 10px 25px rgba(73, 233, 138, 0.3);
+    &:before {
+      width: 0;
+      height: 40px;
+      border-radius: 8px;
+      border: 5px solid white;
+      transform: rotate(45deg);
+      background: white;
+    }
+    &:after {
+      width: 0;
+      height: 40px;
+      border-radius: 8px;
+      border: 5px solid white;
+      transform: rotate(-45deg);
+      background: white;
+    }
+  }
+}
